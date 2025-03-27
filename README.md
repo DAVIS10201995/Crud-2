@@ -7,7 +7,7 @@
 
 
 ## URL
-  [text](https://crud-2-production.up.railway.app/api/usuarios)
+  https://crud-2-production.up.railway.app/api/usuarios
 
 
 ##  Endpoints de la API
