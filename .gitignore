@@ -1,0 +1,33 @@
+### Archivos y carpetas de Maven ###
+/target/
+.mvn/
+
+### Archivos del IDE ###
+/.idea/
+/.vscode/
+*.iml
+
+### Archivos de sistema ###
+.DS_Store
+Thumbs.db
+
+### Configuración del entorno ###
+.env
+
+### Archivos de logs ###
+logs/
+*.log
+
+### Dependencias descargadas ###
+/.m2/repository/
+
+### Archivos de compilación ###
+*.class
+*.jar
+*.war
+*.ear
+
+### Configuración específica de Spring Boot ###
+application.properties
+
+
