@@ -1,20 +1,13 @@
 # API de Usuarios con Spring Boot
 
 ## Requisitos
-- Java 24
+- Java 17+
 - PostgreSQL
 - Postman (para pruebas)
 
-## Instalación y ejecución
-1. Clonar el repositorio:
-   ```sh
-   git clone https://github.com/DAVIS10201995/Crud.git
-   cd Crud
-   ```
 
 ## URL
-   http://localhost:8080/api
-
+  [text](https://crud-2-production.up.railway.app/api/usuarios)
 
 
 ##  Endpoints de la API
@@ -29,13 +22,20 @@
 
  
   
- ## Ejemplo 
-GET http://localhost:8080/api/usuarios
+ ## ENDPOINTS
 
-  respuesta
-  [
+### **Obtener todos los usuarios**
+
+```http
+GET /api/usuarios
+```
+
+**Respuesta exitosa:**
+
+```json
+[
     {
-          "id": 1,
+        "id": 1,
         "nombre": "Jose Miguel Talavera Uribe",
         "correo": "josemiguel@hotmail.com",
         "edad": 20
@@ -101,18 +101,100 @@ GET http://localhost:8080/api/usuarios
         "edad": 18
     }
 ]
+```
+### **Crear un usuario**
+
+```http
+POST /api/usuarios
+```
+
+**Cuerpo de la solicitud:**
+
+```json
+{
+    "nombre": "Juan Perez",
+    "correo": "juanperez@example.com",
+    "edad": 28
+}
+```
+
+**Respuesta exitosa:**
+
+```json
+{
+    "id": 28,
+    "nombre": "Juan Perez",
+    "correo": "juanperez@example.com",
+    "edad": 28
+}
+```
+
+**Errores comunes:**
+
+- **400 Bad Request:** Si faltan campos obligatorios o el formato es incorrecto.
+- **409 Conflict:** Si el correo ya está registrado.
+
+
+### **Actualizar un usuario**
+
+```http
+PATCH /api/usuarios/{id}
+```
+
+**Cuerpo de la solicitud:**
+
+```json
+{
+    "nombre": "Juan Actualizado",
+    "correo": "juanactualizado@example.com",
+    "edad": 29
+}
+```
+
+**Respuesta exitosa:**
+
+```json
+{
+    "id": 28,
+    "nombre": "Juan Actualizado",
+    "correo": "juanactualizado@example.com",
+    "edad": 29
+}
+```
+
+**Errores comunes:**
+
+- **400 Bad Request:** Si el cuerpo de la solicitud tiene un formato incorrecto.
+- **404 Not Found:** Si no existe un usuario con el ID proporcionado.
+
+---
+
+### **Eliminar un usuario**
+
+```http
+DELETE /api/usuarios/{id}
+```
+
+**Respuesta exitosa:**
+
+```json
+{
+    "mensaje": "Usuario eliminado exitosamente"
+}
+```
+
+**Errores comunes:**
+
+- **404 Not Found:** Si no existe un usuario con el ID proporcionado.
+- **500 Internal Server Error:** Si ocurre un error inesperado en el servidor.
 
 ## Pruebas con Postman
 
 Para facilitar las pruebas, hemos creado una colección de Postman con todos los endpoints de la API.
 
-### **Cómo importar la colección**
-1. Abre **Postman**.
-2. Haz clic en **"Importar"** en la parte superior izquierda.
-3. Selecciona **"Subir archivos"** y elige el archivo `postman/localCRUD.postman_collection.json` de este repositorio.
-4. La colección se agregará automáticamente con todos los endpoints configurados.
-5. Configura la URL base en Postman: `http://localhost:8080/api/usuarios`.
 
-📌 **Nota:** Asegúrate de que la API está corriendo antes de hacer pruebas.
+
+
+
 
    
