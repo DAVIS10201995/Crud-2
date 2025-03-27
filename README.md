@@ -5,12 +5,6 @@
 - PostgreSQL
 - Postman (para pruebas)
 
-## Instalación y ejecución
-1. Clonar el repositorio:
-   ```sh
-   git clone https://github.com/DAVIS10201995/Crud.git
-   cd Crud
-   ```
 
 ## URL
   [text](https://crud-2-production.up.railway.app/api/usuarios)
